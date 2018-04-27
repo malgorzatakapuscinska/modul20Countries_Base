@@ -13,3 +13,5 @@ const countriesReducer = function(state: initialState, action) {
 
   return state;
 };
+
+export default countriesReducer;
