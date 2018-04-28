@@ -17,6 +17,9 @@ const Navigation = props => (
         </ul>
       </div>
     </nav>
+    <div className='container-fluid'>
+      {props.children}
+    </div>
   </div>
 );
 
