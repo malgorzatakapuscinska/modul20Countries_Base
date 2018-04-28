@@ -13,5 +13,5 @@ render(
         <DevTools />
       </div>
     </Provider>
-    document.getElementById('root')
+    , document.getElementById('root')
 );
