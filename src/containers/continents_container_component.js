@@ -13,7 +13,6 @@ class ContinentsContainer extends Component{
   }
 
   deleteCountry(id) {
-    console.log(id);
     this.props.dispatch(deleteCountry(id));
   }
 
@@ -22,7 +21,6 @@ class ContinentsContainer extends Component{
   }
 
   render(){
-    console.log(this.props.visibleCountries);
     return (
       <div>
         <select onChange={(e) => this.chooseContinent(e)}>

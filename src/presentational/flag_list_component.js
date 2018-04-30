@@ -3,7 +3,6 @@ import {Link} from 'react-router';
 import CountryFlag from './flag_component';
 
 const CountryFlagList = (props) =>  {
-  console.log(props);
   return(
     <div className="countries-list">
       {

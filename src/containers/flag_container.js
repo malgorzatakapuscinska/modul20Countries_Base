@@ -15,7 +15,6 @@ class CountryFlagContainer extends Component {
 
   search(event) {
     this.props.dispatch(searchCountries(event.target.value));
-    console.log(event.target.value);
   }
 
   deleteCountry(id) {
@@ -23,7 +22,6 @@ class CountryFlagContainer extends Component {
   }
 
   render() {
-    console.log(this.props.visibleCountries);
     return (
       <div>
         <div className="search text-center">
