@@ -5,7 +5,7 @@ import CountryFlag from './flag_component';
 const CountryFlagList = (props) =>  {
   console.log(props);
   return(
-    <div>
+    <div className="countries-list">
       {
         props.countries.map(country => {
           return (
