@@ -3,8 +3,8 @@ import countriesData from '../data/countries.json';
 
 const initialState = {
   countries: countriesData,
-  selectedCountry: {};
-  visibleCountries: [];
+  selectedCountry: {},
+  visibleCountries: []
 };
 
 const countriesReducer = function(state=initialState, action) {
@@ -18,19 +18,20 @@ const countriesReducer = function(state=initialState, action) {
 
     case SEARCH_COUNTRIES:
       const foundCounties = state.countries.filter(country => country.name.toLowerCase().includes(action.searchText.toLowerCase()));
-      return objectAssign({}, state, visibleCountries: foundCounties);
+      return Object.assign({}, state, {visibleCountries: foundCounties});
 
     case DELETE_COUNTRY:
-      const notDeletedCountries = state.countries.filter(country => country.id!==action.id);
-      const notDeletedVisibleCountries = state.countries.filter(country => country.id!==action.id);
-      return objectAssign({}, state, {countries: notDeletedCountries, visibleCountries: notDeletedVisibleCountries});
+      const notDeletedCountries = state.countries.filter(country => country.id!==parseInt(action.id));
+      const notDeletedVisibleCountries = state.countries.filter(country => country.id!==parseInt(action.id));
+      return Object.assign({}, state, {countries: notDeletedCountries, visibleCountries: notDeletedVisibleCountries});
 
     case SET_CONTINENT:
       const continentCountries = state.countries.filter(country => country.continent === action.name);
-      return objectAssign({}, state, visibleCountries: continentCountries);
-  }
+      return Object.assign({}, state, {visibleCountries: continentCountries});
 
-  return state;
+    default:
+      return state;
+  }
 };
 
 export default countriesReducer;

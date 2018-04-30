@@ -1,15 +1,15 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {setContinent, deleteCountry} from '../actions/actions-countries';
-import {CountryFlagList} from '../presentational/flag_list_component';
+import CountryFlagList from '../presentational/flag_list_component';
 
 class ContinentsContainer extends Component{
   constructor(props){
     super(props);
   }
 
-  chisooseContinent(){
-    this.props.dispatch(setContinent(e.target.value));
+  chooseContinent(event){
+    this.props.dispatch(setContinent(event.target.value));
   }
 
   deleteCountry(id) {
@@ -21,9 +21,10 @@ class ContinentsContainer extends Component{
   }
 
   render(){
+    console.log(this.props.visibleCountries);
     return (
       <div>
-        <select onChange={e => this.chooseContinent(e)}>
+        <select onChange={(event) => this.chooseContinent(event)}>
           <option value='Europa'>Europa</option>
           <option value='Afryka'>Afryka</option>
         </select>
@@ -35,7 +36,7 @@ class ContinentsContainer extends Component{
 
 const mapStateToProps = function(store){
   return {
-  countries: store.countriesReducer.visibleCountries
+  visibleCountries: store.countriesReducer.visibleCountries
   };
 };
 
