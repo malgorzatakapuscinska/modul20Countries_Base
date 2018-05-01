@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import CountryFlagList from '../presentational/flag_list_component';
-import {getCountries, searchCountries, deleteCountry} from '../actions/actions-countries';
+import {getCountries, searchCountries, deleteCountry, setContinent} from '../actions/actions-countries';
 
 class CountryFlagContainer extends Component {
   constructor(props){
@@ -28,7 +28,7 @@ class CountryFlagContainer extends Component {
         <div className="search text-center">
           <input type="text" onChange={this.search.bind(this)}/>
         </div>
-        <CountryFlagList countries={this.props.visibleCountries} deleteCountry={this.deleteCountry.bind(this)} />
+        <CountryFlagList countries={this.props.countries} deleteCountry={this.deleteCountry.bind(this)} />
       </div>
     );
   }
