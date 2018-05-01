@@ -22,6 +22,7 @@ class CountryFlagContainer extends Component {
   }
 
   render() {
+    console.log(this.props.visibleCountries);
     return (
       <div>
         <div className="search text-center">
